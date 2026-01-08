@@ -14,11 +14,8 @@ namespace ParkingLotMAUI.Data
             _database.CreateTableAsync<ParkingLot>().Wait();
             _database.CreateTableAsync<SubscriptionPlan>().Wait();
             _database.CreateTableAsync<PlanParkingLot>().Wait();
+            _database.CreateTableAsync<Subscription>().Wait();
         }
-
-        // -------------------------
-        // ParkingLots
-        // -------------------------
         public Task<List<ParkingLot>> GetParkingLotsAsync()
             => _database.Table<ParkingLot>().ToListAsync();
 
@@ -51,9 +48,7 @@ namespace ParkingLotMAUI.Data
         public Task<int> DeleteSubscriptionPlanAsync(SubscriptionPlan plan)
             => _database.DeleteAsync(plan);
 
-        // -------------------------
-        // PlanParkingLot
-        // -------------------------
+  
         public Task<List<PlanParkingLot>> GetPlanParkingLotsAsync(int planId)
             => _database.Table<PlanParkingLot>()
                         .Where(x => x.SubscriptionPlanID == planId)
@@ -90,5 +85,16 @@ namespace ParkingLotMAUI.Data
                 });
             }
         }
+        public Task<List<Subscription>> GetSubscriptionsAsync()
+            => _database.Table<Subscription>().ToListAsync();
+
+        public Task<int> SaveSubscriptionAsync(Subscription sub)
+        {
+            if (sub.ID != 0) return _database.UpdateAsync(sub);
+            return _database.InsertAsync(sub);
+        }
+
+        public Task<int> DeleteSubscriptionAsync(Subscription sub)
+            => _database.DeleteAsync(sub);
     }
 }
