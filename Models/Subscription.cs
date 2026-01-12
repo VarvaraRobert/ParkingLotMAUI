@@ -1,0 +1,15 @@
+﻿using SQLite;
+
+namespace ParkingLotMAUI.Models
+{
+    public class Subscription
+    {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+
+        public int SubscriptionPlanID { get; set; }
+
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+    }
+}
