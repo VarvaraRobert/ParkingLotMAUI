@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkingLotMAUI.SubscriptionPlanPage"
+             Title="Subscription Plan">
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <Entry Placeholder="Name"
+               Text="{Binding Name}" />
+
+        <Entry Placeholder="Monthly price"
+               Keyboard="Numeric"
+               Text="{Binding MonthlyPrice}" />
+
+        <Entry Placeholder="Duration days"
+               Keyboard="Numeric"
+               Text="{Binding DurationDays}" />
+
+        <Button Text="Manage Parking Lots"
+                Clicked="OnManageParkingLotsClicked" />
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked" />
+        </Grid>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkingLotMAUI.SubscriptionCreatePage"
+             Title="Create Subscription">
+
+    <StackLayout Margin="20" Spacing="12">
+
+        <Label Text="Subscriber name" />
+        <Entry x:Name="subscriberEntry" Placeholder="John Doe" />
+
+        <Label Text="Choose plan" />
+        <Picker x:Name="planPicker" Title="Select a plan" SelectedIndexChanged="OnChanged" />
+
+        <Label Text="Start date" />
+        <DatePicker x:Name="startDatePicker" DateSelected="OnChanged" />
+
+        <Label x:Name="endDateLabel" FontAttributes="Bold" Text="End date: -" />
+
+        <Button Text="Save" Clicked="OnSaveClicked" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkingLotMAUI.SubscriptionDetailsPage"
+             Title="Subscription Details">
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="12">
+
+            <Label x:Name="titleLabel" FontSize="20" FontAttributes="Bold" Text="-" />
+
+            <Grid ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  RowSpacing="8"
+                  ColumnSpacing="12">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Plan:" FontAttributes="Bold"/>
+                <Label Grid.Row="0" Grid.Column="1" x:Name="planLabel" Text="-" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Start:" FontAttributes="Bold"/>
+                <Label Grid.Row="1" Grid.Column="1" x:Name="startLabel" Text="-" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="End:" FontAttributes="Bold"/>
+                <Label Grid.Row="2" Grid.Column="1" x:Name="endLabel" Text="-" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Days left:" FontAttributes="Bold"/>
+                <Label Grid.Row="3" Grid.Column="1" x:Name="daysLeftLabel" Text="-" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Status:" FontAttributes="Bold"/>
+                <Label Grid.Row="4" Grid.Column="1" x:Name="statusLabel" Text="-" />
+            </Grid>
+
+            <Grid ColumnDefinitions="Auto,Auto,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="12"
+                  RowSpacing="6">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Reminder"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+
+                <Switch Grid.Row="0" Grid.Column="1"
+                        x:Name="reminderSwitch"
+                        VerticalOptions="Center"
+                        Toggled="OnReminderToggled" />
+
+                <Label Grid.Row="0" Grid.Column="2"
+                       x:Name="reminderStateLabel"
+                       Text="OFF"
+                       VerticalOptions="Center" />
+
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                       x:Name="reminderInfoLabel"
+                       FontSize="13"
+                       Text="Reminder is OFF" />
+            </Grid>
+
+            <Label Text="Actions" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+
+            <Button x:Name="extendButton"
+                    Text="Extend"
+                    Clicked="OnExtendClicked" />
+
+            <Button Text="Delete"
+                    BackgroundColor="Tomato"
+                    TextColor="White"
+                    Clicked="OnDeleteClicked" />
+
+            <Button Text="Back"
+                    Clicked="OnBackClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

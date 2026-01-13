@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkingLotMAUI.DashboardPage"
+             Title="Dashboard">
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="16">
+
+            <Label Text="Overview" FontSize="22" FontAttributes="Bold"/>
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="12">
+                <Frame Grid.Row="0" Grid.Column="0" Padding="12">
+                    <VerticalStackLayout>
+                        <Label Text="Parking lots" FontAttributes="Bold"/>
+                        <Label x:Name="parkingLotsCountLabel" Text="0" FontSize="20"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="1" Padding="12">
+                    <VerticalStackLayout>
+                        <Label Text="Plans" FontAttributes="Bold"/>
+                        <Label x:Name="plansCountLabel" Text="0" FontSize="20"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" Padding="12">
+                    <VerticalStackLayout>
+                        <Label Text="Subscriptions" FontAttributes="Bold"/>
+                        <Label x:Name="subsCountLabel" Text="0" FontSize="20"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="1" Padding="12">
+                    <VerticalStackLayout>
+                        <Label Text="Expiring (3 days)" FontAttributes="Bold"/>
+                        <Label x:Name="expiringCountLabel" Text="0" FontSize="20"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <Label Text="Expiring soon" FontSize="18" FontAttributes="Bold"/>
+
+            <CollectionView x:Name="expiringList" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="12" Margin="0,0,0,10">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Title}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Detail}" FontSize="13"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
