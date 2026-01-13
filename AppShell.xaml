@@ -11,5 +11,7 @@
         <ShellContent Title="Parking Lots" ContentTemplate="{DataTemplate local:ParkingLotEntryPage}" />
         <ShellContent Title="Plans" ContentTemplate="{DataTemplate local:SubscriptionPlanEntryPage}" />
         <ShellContent Title="About" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Subscriptions" ContentTemplate="{DataTemplate local:SubscriptionsEntryPage}" />
+        <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate local:DashboardPage}" />
     </TabBar>
 </Shell>

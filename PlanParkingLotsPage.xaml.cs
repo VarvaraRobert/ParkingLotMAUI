@@ -48,4 +48,9 @@ public partial class PlanParkingLotsPage : ContentPage
         listView.SelectedItem = null;
         await LoadDataAsync();
     }
+
+    async void OnDoneClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParkingLotMAUI.SubscriptionPlanPage"
              Title="Subscription Plan">
+
     <StackLayout Margin="20" Spacing="10">
 
         <Entry Placeholder="Name"
@@ -16,21 +17,16 @@
                Keyboard="Numeric"
                Text="{Binding DurationDays}" />
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <Button Text="Manage Parking Lots"
+                Clicked="OnManageParkingLotsClicked" />
 
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
             <Button Text="Save"
                     Clicked="OnSaveButtonClicked" />
 
             <Button Grid.Column="1"
                     Text="Delete"
                     Clicked="OnDeleteButtonClicked" />
-
-            <Button Text="Manage Parking Lots"
-                    Clicked="OnManageParkingLotsClicked" />
         </Grid>
 
     </StackLayout>

@@ -88,6 +88,9 @@ namespace ParkingLotMAUI.Data
         public Task<List<Subscription>> GetSubscriptionsAsync()
             => _database.Table<Subscription>().ToListAsync();
 
+        public Task<Subscription?> GetSubscriptionAsync(int id)
+            => _database.Table<Subscription>().Where(s => s.ID == id).FirstOrDefaultAsync();
+
         public Task<int> SaveSubscriptionAsync(Subscription sub)
         {
             if (sub.ID != 0) return _database.UpdateAsync(sub);

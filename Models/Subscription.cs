@@ -11,5 +11,9 @@ namespace ParkingLotMAUI.Models
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        public string SubscriberName { get; set; } = string.Empty;
+        public bool ReminderEnabled { get; set; }
+        public DateTime? ReminderDate { get; set; }
     }
 }

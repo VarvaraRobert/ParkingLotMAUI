@@ -4,6 +4,10 @@
              x:Class="ParkingLotMAUI.PlanParkingLotsPage"
              Title="Plan Parking Lots">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Done" Clicked="OnDoneClicked" />
+    </ContentPage.ToolbarItems>
+
     <StackLayout Margin="20" Spacing="12">
         <Label x:Name="PlanNameLabel"
                FontSize="20"
@@ -36,5 +40,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Button Text="Back to Plan"
+                Clicked="OnDoneClicked" />
     </StackLayout>
 </ContentPage>
